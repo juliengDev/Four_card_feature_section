@@ -1,0 +1,305 @@
+@charset "UTF-8";
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --color-dark-grey: #4d4f62;
+  --color-green: #44d3d2;
+  --color-blue: #549ef2;
+  --color-red: #ea5454;
+  --color-eggshell: #fafafa;
+  --color-orange: #fcae4a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 100dvh;
+  background-color: var(--color-eggshell);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto; /* or pointer if you want to keep the default hand cursor */
+}
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+/** 
+
+	100 : Thin
+	•	200 : Extra Light (Ultra Light)
+	•	300 : Light
+	•	400 : Normal
+	•	500 : Medium
+	•	600 : Semi Bold (Demi Bold)
+	•	700 : Bold
+	•	800 : Extra Bold (Ultra Bold)
+	•	900 : Black (Heavy)
+
+  */
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-dark-grey);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline-start: 16.5rem;
+  margin-inline-end: 16.5rem;
+  margin-block-start: 8rem;
+  gap: 6.4rem;
+  max-width: 111rem;
+}
+@media only screen and (max-width: 23.4375em) {
+  .container {
+    max-width: 31.1rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    max-width: 40rem;
+    margin-block-start: 8.5rem;
+    margin-inline-start: 3.2rem;
+    margin-inline-end: 3.2rem;
+    gap: 7.6rem;
+  }
+}
+
+.grid-container {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  align-items: center;
+}
+@media only screen and (max-width: 75em) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 54rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.heading__main {
+  font-weight: 200;
+  font-size: 2.4rem;
+  letter-spacing: 0.17px;
+  margin-block-end: 1rem;
+}
+.heading__secondary {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-block-end: 1.3rem;
+}
+.heading__txt {
+  font-size: 1.5rem;
+  line-height: 1.67;
+}
+
+.attribution {
+  margin: 3.2rem 0 2.4rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--color-wenge-brown);
+}
+.attribution__credit {
+  font-weight: 800;
+  color: var(--color-dark-raspberry) !important;
+}
+
+.card__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 35rem;
+  border-radius: 8px;
+}
+.card__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.5);
+  border-radius: 8px;
+  z-index: -1;
+}
+@media only screen and (max-width: 37.5em) {
+  .card__item {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    max-width: 31.1rem;
+  }
+}
+.card__item__heading {
+  margin-block-start: 2.7rem;
+  margin-block-end: 11.8rem;
+  margin-inline-start: 2.8rem;
+  margin-inline-end: 2.8rem;
+}
+.card__item__heading__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-block-end: 1rem;
+}
+.card__item__heading__txt {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.card__item__icon {
+  position: absolute;
+  bottom: 2.8rem;
+  right: 2.8rem;
+  transform: scale(0.890625);
+  transform-origin: 0 0;
+}
+
+.item1 {
+  grid-column: 1;
+  grid-row: 1/span 2;
+}
+@media only screen and (max-width: 75em) {
+  .item1 {
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .item1 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+.item1::before {
+  content: "";
+  border: 3.5px solid var(--color-green);
+  border-radius: 8px 8px 0 0;
+}
+
+.item2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+@media only screen and (max-width: 75em) {
+  .item2 {
+    grid-column: 2/3;
+    grid-row: 1;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .item2 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+.item2::before {
+  content: "";
+  border: 3.5px solid var(--color-red);
+  border-radius: 8px 8px 0 0;
+}
+
+.item3 {
+  grid-column: 2;
+  grid-row: 2;
+}
+@media only screen and (max-width: 75em) {
+  .item3 {
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .item3 {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+.item3::before {
+  content: "";
+  border: 3.5px solid var(--color-orange);
+  border-radius: 8px 8px 0 0;
+}
+
+.item4 {
+  grid-column: 3;
+  grid-row: 1/span 2;
+}
+@media only screen and (max-width: 75em) {
+  .item4 {
+    grid-column: 2/3;
+    grid-row: 2;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .item4 {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
+.item4::before {
+  content: "";
+  border: 3.5px solid var(--color-blue);
+  border-radius: 8px 8px 0 0;
+}
+
+/*# sourceMappingURL=style.css.map */

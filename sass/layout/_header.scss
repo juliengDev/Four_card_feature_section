@@ -1,0 +1,25 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 54rem;
+  margin: 0 auto;
+  text-align: center;
+
+  &__main {
+    font-weight: 200;
+    font-size: 2.4rem;
+    letter-spacing: 0.17px;
+    margin-block-end: 1rem;
+  }
+  &__secondary {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-block-end: 1.3rem;
+  }
+  &__txt {
+    font-size: 1.5rem;
+    line-height: 1.67;
+  }
+}
