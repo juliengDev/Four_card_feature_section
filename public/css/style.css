@@ -146,6 +146,7 @@ body {
   font-weight: 200;
   letter-spacing: 0.17px;
   margin-block-end: 1rem;
+  color: var(--color-dark-grey);
 }
 @media only screen and (max-width: 37.5em) {
   .heading__main {
@@ -168,6 +169,7 @@ body {
   letter-spacing: 0.1px;
   font-size: 1.5rem;
   line-height: 1.67;
+  color: var(--color-dark-grey);
 }
 
 .attribution {
@@ -219,6 +221,7 @@ body {
 .card__item__heading__txt {
   font-size: 1.3rem;
   font-weight: 400;
+  color: var(--color-dark-grey);
 }
 .card__item__icon {
   position: absolute;
