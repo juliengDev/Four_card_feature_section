@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     max-width: 35rem;
+    min-height: 22.2rem;
     border-radius: 8px;
 
     &::after {
@@ -35,7 +36,7 @@
       }
       &__txt {
         font-size: 1.3rem;
-        font-weight: 400;
+        font-weight: 200;
         color: var(--color-dark-grey);
       }
     }
@@ -64,7 +65,7 @@
 
   &::before {
     content: "";
-    border: 3.5px solid var(--color-green);
+    border: 2.5px solid var(--color-green);
     border-radius: 8px 8px 0 0;
   }
 }
@@ -83,7 +84,7 @@
 
   &::before {
     content: "";
-    border: 3.5px solid var(--color-red);
+    border: 2.5px solid var(--color-red);
     border-radius: 8px 8px 0 0;
   }
 }
@@ -101,7 +102,7 @@
   }
   &::before {
     content: "";
-    border: 3.5px solid var(--color-orange);
+    border: 2.5px solid var(--color-orange);
     border-radius: 8px 8px 0 0;
   }
 }
@@ -120,7 +121,7 @@
 
   &::before {
     content: "";
-    border: 3.5px solid var(--color-blue);
+    border: 2.5px solid var(--color-blue);
     border-radius: 8px 8px 0 0;
   }
 }
