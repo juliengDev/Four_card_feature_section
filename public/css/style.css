@@ -229,8 +229,6 @@ body {
   position: absolute;
   bottom: 2.8rem;
   right: 2.8rem;
-  transform: scale(0.890625);
-  transform-origin: 0 0;
 }
 
 .item1 {
