@@ -6,19 +6,31 @@
   max-width: 54rem;
   margin: 0 auto;
   text-align: center;
+  letter-spacing: 0.25px;
 
   &__main {
+    font-size: 3.6rem;
     font-weight: 200;
-    font-size: 2.4rem;
     letter-spacing: 0.17px;
     margin-block-end: 1rem;
+
+    @include respond(phone) {
+      font-size: 2.4rem;
+      letter-spacing: 0.17px;
+    }
   }
   &__secondary {
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     font-weight: 600;
     margin-block-end: 1.3rem;
+
+    @include respond(phone) {
+      font-size: 2.4rem;
+      letter-spacing: 0.17px;
+    }
   }
   &__txt {
+    letter-spacing: 0.1px;
     font-size: 1.5rem;
     line-height: 1.67;
   }

@@ -139,19 +139,33 @@ body {
   max-width: 54rem;
   margin: 0 auto;
   text-align: center;
+  letter-spacing: 0.25px;
 }
 .heading__main {
+  font-size: 3.6rem;
   font-weight: 200;
-  font-size: 2.4rem;
   letter-spacing: 0.17px;
   margin-block-end: 1rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .heading__main {
+    font-size: 2.4rem;
+    letter-spacing: 0.17px;
+  }
+}
 .heading__secondary {
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   font-weight: 600;
   margin-block-end: 1.3rem;
 }
+@media only screen and (max-width: 37.5em) {
+  .heading__secondary {
+    font-size: 2.4rem;
+    letter-spacing: 0.17px;
+  }
+}
 .heading__txt {
+  letter-spacing: 0.1px;
   font-size: 1.5rem;
   line-height: 1.67;
 }
